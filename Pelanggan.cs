@@ -55,7 +55,7 @@ namespace CRUD_TugasAkhir
         {
             SqlConnection conn = new SqlConnection(stringConnection);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("update Pelanggan set ID_Pelanggan = @ID_Pelanggan, Nama_Pelanggan = @Nama_Pelanggan, Alamat = @Alamat, Nomor_Telepon = @Nomor_Telepon, Email = @Email)", conn);
+            SqlCommand cmd = new SqlCommand("update Pelanggan set Nama_Pelanggan = @Nama_Pelanggan, Alamat = @Alamat, Nomor_Telepon = @Nomor_Telepon, Email = @Email where ID_Pelanggan = @ID_Pelanggan", conn);
             cmd.Parameters.AddWithValue("@ID_Pelanggan", IDPelanggantxt.Text);
             cmd.Parameters.AddWithValue("@Nama_Pelanggan", namaPelanggantxt.Text);
             cmd.Parameters.AddWithValue("@Alamat", alamatPelanggantxt.Text);
